@@ -15,6 +15,10 @@ type testCase struct {
 
 var includeDirs = map[string][]testCase{
 	"projects": {{cmd: "npm", args: []string{"run", "test:prod"}}},
+	"go": {
+		{cmd: "go", args: []string{"test", "-v", "./..."}},
+		{cmd: "go", args: []string{"vet", "-v", "./..."}},
+	},
 }
 
 func includeDir(dir string) bool {
